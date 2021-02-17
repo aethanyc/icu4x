@@ -1,0 +1,38 @@
+# This file is part of ICU4X. For terms of use, please see the file
+# called LICENSE at the top level of the ICU4X source tree
+# (online at: https://github.com/unicode-org/icu4x/blob/master/LICENSE ).
+[package]
+name = "icu_segmenter"
+description = "API for Unicode aware Text Boundary Analysis and Segmentation"
+version = "0.1.0"
+authors = ["The ICU4X Project Developers"]
+edition = "2018"
+readme = "README.md"
+repository = "https://github.com/unicode-org/icu4x"
+license-file = "../../LICENSE"
+keywords = ["unicode"]
+categories = ["internationalization"]
+include = [
+    "src/**/*",
+    "examples/**/*",
+    "benches/**/*",
+    "Cargo.toml",
+    "README.md"
+]
+
+[dependencies]
+unicode-width = "0.1.7"
+
+[target."cfg(target_os = \"windows\")".dependencies.winapi]
+version = "0.3.7"
+features = ["usp10"]
+
+[target."cfg(target_os = \"macos\")".dependencies.core-foundation]
+version = "0.9"
+
+[target."cfg(target_os = \"android\")".dependencies.jni]
+version = "0.18.0"
+
+[features]
+default = []
+platform_fallback = []

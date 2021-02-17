@@ -942,6 +942,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "icu_segmenter"
+version = "0.1.0"
+dependencies = [
+ "unicode-width",
+]
+
+[[package]]
 name = "icu_segmenter_lstm"
 version = "0.1.0"
 dependencies = [
