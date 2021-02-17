@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1606260294606,
-  "repoUrl": "https://github.com/unicode-org/icu4x",
+  "lastUpdate": 1613543370365,
+  "repoUrl": "https://github.com/aethanyc/icu4x",
   "entries": {
     "Rust Benchmark": [
       {
@@ -2069,6 +2069,36 @@ window.BENCHMARK_DATA = {
             "name": "uniset/overview",
             "value": 32510393,
             "range": "± 434509",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sffc@google.com",
+            "name": "Shane F. Carr",
+            "username": "sffc"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": false,
+          "id": "3be597cdf89432e493e7777bb4dec54854a47f97",
+          "message": "Update string type recommendations in style_guide.md (#490)",
+          "timestamp": "2021-02-12T14:07:12-06:00",
+          "tree_id": "3516e2db54f25c315b8e63f51df7cb8fc3f4de38",
+          "url": "https://github.com/aethanyc/icu4x/commit/3be597cdf89432e493e7777bb4dec54854a47f97"
+        },
+        "date": 1613543367129,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "uniset/overview",
+            "value": 38102766,
+            "range": "± 115018",
             "unit": "ns/iter"
           }
         ]
