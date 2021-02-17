@@ -1,9 +1,9 @@
-extern crate uax14_rs;
+extern crate icu_segmenter;
 
-use uax14_rs::LineBreakIterator;
-use uax14_rs::LineBreakIteratorUTF16;
-use uax14_rs::LineBreakRule;
-use uax14_rs::WordBreakRule;
+use icu_segmenter::LineBreakIterator;
+use icu_segmenter::LineBreakIteratorUTF16;
+use icu_segmenter::LineBreakRule;
+use icu_segmenter::WordBreakRule;
 
 fn strict(s: &str, ja_zh: bool, expect_utf8: Vec<usize>, expect_utf16: Vec<usize>) {
     let iter = LineBreakIterator::new_with_break_rule(

@@ -1,13 +1,13 @@
-extern crate uax14_rs;
+extern crate icu_segmenter;
 
 use std::char;
 use std::fs::File;
 use std::io::prelude::*;
 use std::io::BufReader;
 use std::u32;
-use uax14_rs::LineBreakIterator;
-use uax14_rs::LineBreakIteratorLatin1;
-use uax14_rs::LineBreakIteratorUTF16;
+use icu_segmenter::LineBreakIterator;
+use icu_segmenter::LineBreakIteratorLatin1;
+use icu_segmenter::LineBreakIteratorUTF16;
 
 #[test]
 fn run_line_break_test() {
