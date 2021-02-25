@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1613543395412,
+  "lastUpdate": 1614277310931,
   "repoUrl": "https://github.com/aethanyc/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -1469,6 +1469,48 @@ window.BENCHMARK_DATA = {
             "name": "plurals/pluralrules/overview",
             "value": 92711,
             "range": "± 5089",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "manishsmail@gmail.com",
+            "name": "Manish Goregaokar",
+            "username": "Manishearth"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "fdd3a0b4773388f2df8cdc3c6cb5bf4230ac79cf",
+          "message": "Add litemap crate (TupleVecMap) (#496)\n\n* Add terrain crate\r\n\r\n* Add doctests\r\n\r\n* Add license header, Cargo manifest keys\r\n\r\n* More review fixes\r\n\r\n* Run rustfmt\r\n\r\n* Add simple readme\r\n\r\n* Rename to litemap\r\n\r\n* VecMap -> LiteMap\r\n\r\n* Add K: Borrow<Q>",
+          "timestamp": "2021-02-22T16:59:24-08:00",
+          "tree_id": "31fa9eb6d25b32050bf2d6b629f45179818d8261",
+          "url": "https://github.com/aethanyc/icu4x/commit/fdd3a0b4773388f2df8cdc3c6cb5bf4230ac79cf"
+        },
+        "date": 1614277310228,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "plurals/operands/overview",
+            "value": 1622,
+            "range": "± 62",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "plurals/parser/overview",
+            "value": 7732,
+            "range": "± 541",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "plurals/pluralrules/overview",
+            "value": 110070,
+            "range": "± 4270",
             "unit": "ns/iter"
           }
         ]
