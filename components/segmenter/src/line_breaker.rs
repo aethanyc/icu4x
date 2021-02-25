@@ -1,25 +1,7 @@
 extern crate unicode_width;
 
-#[cfg(all(target_os = "android", feature = "platform_fallback"))]
-use crate::android::*;
-#[cfg(not(all(
-    any(
-        target_os = "macos",
-        target_os = "windows",
-        target_os = "linux",
-        target_os = "android"
-    ),
-    feature = "platform_fallback"
-)))]
-use crate::lstm::*;
-#[cfg(all(target_os = "macos", feature = "platform_fallback"))]
-use crate::macos::*;
-#[cfg(all(target_os = "linux", feature = "platform_fallback"))]
-use crate::pango::*;
-#[cfg(all(target_os = "windows", feature = "platform_fallback"))]
-use crate::windows::*;
-
 use crate::lb_define::*;
+use crate::lstm::*;
 use crate::property_table::*;
 use crate::rule_table::*;
 
@@ -260,8 +242,6 @@ macro_rules! break_iterator_impl {
             break_rule: LineBreakRule,
             word_break_rule: WordBreakRule,
             ja_zh: bool,
-            #[cfg(target_os = "android")]
-            env: *mut c_void,
         }
 
         impl<'a> Iterator for $name<'a> {
@@ -376,7 +356,6 @@ macro_rules! break_iterator_impl {
                         if result.is_some() {
                             return result;
                         }
-                        // result is None means that platform API doesn't found any break opportunity.
                         // I may have to fetch text until non-SA character?.
                     }
 
@@ -574,8 +553,6 @@ impl<'a> LineBreakIterator<'a> {
             break_rule: LineBreakRule::Strict,
             word_break_rule: WordBreakRule::Normal,
             ja_zh: false,
-            #[cfg(target_os = "android")]
-            env: std::ptr::null_mut(),
         }
     }
 
@@ -594,8 +571,6 @@ impl<'a> LineBreakIterator<'a> {
             break_rule: line_break_rule,
             word_break_rule: word_break_rule,
             ja_zh: ja_zh,
-            #[cfg(target_os = "android")]
-            env: std::ptr::null_mut(),
         }
     }
 
@@ -626,30 +601,12 @@ impl<'a> LineBreakIterator<'a> {
         use_complex_breaking_utf32(c as u32)
     }
 
-    #[cfg(all(target_os = "android", feature = "platform_fallback"))]
-    fn get_line_break_by_platform_fallback(&mut self, input: &[u16]) -> Vec<usize> {
-        if !self.env.is_null() {
-            if let Some(mut ret) = get_line_break_utf16(self.env, input) {
-                ret.push(input.len());
-                return ret;
-            }
-        }
-        [input.len()].to_vec()
-    }
-
-    #[cfg(not(all(target_os = "android", feature = "platform_fallback")))]
     fn get_line_break_by_platform_fallback(&mut self, input: &[u16]) -> Vec<usize> {
         if let Some(mut ret) = get_line_break_utf16(input) {
             ret.push(input.len());
             return ret;
         }
         [input.len()].to_vec()
-    }
-
-    /// Set JNI env for Android
-    #[cfg(target_os = "android")]
-    pub fn set_jni_env(&mut self, env: *mut c_void) {
-        self.env = env;
     }
 }
 
@@ -845,30 +802,12 @@ impl<'a> LineBreakIteratorUTF16<'a> {
         use_complex_breaking_utf32(c)
     }
 
-    #[cfg(all(target_os = "android", feature = "platform_fallback"))]
-    fn get_line_break_by_platform_fallback(&mut self, input: &[u16]) -> Vec<usize> {
-        if !self.env.is_null() {
-            if let Some(mut ret) = get_line_break_utf16(self.env, input) {
-                ret.push(input.len());
-                return ret;
-            }
-        }
-        [input.len()].to_vec()
-    }
-
-    #[cfg(not(all(target_os = "android", feature = "platform_fallback")))]
     fn get_line_break_by_platform_fallback(&mut self, input: &[u16]) -> Vec<usize> {
         if let Some(mut ret) = get_line_break_utf16(input) {
             ret.push(input.len());
             return ret;
         }
         [input.len()].to_vec()
-    }
-
-    /// Set JNI env for Android
-    #[cfg(target_os = "android")]
-    pub fn set_jni_env(&mut self, env: *mut c_void) {
-        self.env = env;
     }
 }
 
