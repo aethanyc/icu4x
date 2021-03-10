@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1615413199680,
+  "lastUpdate": 1615413332449,
   "repoUrl": "https://github.com/aethanyc/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -1553,6 +1553,48 @@ window.BENCHMARK_DATA = {
             "name": "plurals/pluralrules/overview",
             "value": 111240,
             "range": "± 1050",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "zibi@braniecki.net",
+            "name": "Zibi Braniecki",
+            "username": "zbraniecki"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2d6664a376df209f86d4af47f0a686b91b8172e0",
+          "message": "Move DTF to only store DateSymbols and a single pattern. (#518)",
+          "timestamp": "2021-03-05T07:40:03-08:00",
+          "tree_id": "c6e88347fda54bd0e73aba4c94510803800e4025",
+          "url": "https://github.com/aethanyc/icu4x/commit/2d6664a376df209f86d4af47f0a686b91b8172e0"
+        },
+        "date": 1615413331916,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "plurals/operands/overview",
+            "value": 1574,
+            "range": "± 118",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "plurals/parser/overview",
+            "value": 7549,
+            "range": "± 125",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "plurals/pluralrules/overview",
+            "value": 109533,
+            "range": "± 2094",
             "unit": "ns/iter"
           }
         ]
