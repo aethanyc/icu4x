@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1615413173661,
+  "lastUpdate": 1615413336345,
   "repoUrl": "https://github.com/aethanyc/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -1139,6 +1139,36 @@ window.BENCHMARK_DATA = {
             "name": "datetime/overview",
             "value": 1122005,
             "range": "± 61393",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "zibi@braniecki.net",
+            "name": "Zibi Braniecki",
+            "username": "zbraniecki"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2d6664a376df209f86d4af47f0a686b91b8172e0",
+          "message": "Move DTF to only store DateSymbols and a single pattern. (#518)",
+          "timestamp": "2021-03-05T07:40:03-08:00",
+          "tree_id": "c6e88347fda54bd0e73aba4c94510803800e4025",
+          "url": "https://github.com/aethanyc/icu4x/commit/2d6664a376df209f86d4af47f0a686b91b8172e0"
+        },
+        "date": 1615413335794,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "datetime/overview",
+            "value": 1103293,
+            "range": "± 52260",
             "unit": "ns/iter"
           }
         ]
