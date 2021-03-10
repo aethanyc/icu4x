@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1615413141264,
+  "lastUpdate": 1615413339044,
   "repoUrl": "https://github.com/aethanyc/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -1973,6 +1973,42 @@ window.BENCHMARK_DATA = {
             "name": "locale/overview",
             "value": 4381,
             "range": "± 10",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "zibi@braniecki.net",
+            "name": "Zibi Braniecki",
+            "username": "zbraniecki"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2d6664a376df209f86d4af47f0a686b91b8172e0",
+          "message": "Move DTF to only store DateSymbols and a single pattern. (#518)",
+          "timestamp": "2021-03-05T07:40:03-08:00",
+          "tree_id": "c6e88347fda54bd0e73aba4c94510803800e4025",
+          "url": "https://github.com/aethanyc/icu4x/commit/2d6664a376df209f86d4af47f0a686b91b8172e0"
+        },
+        "date": 1615413338474,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "langid/overview",
+            "value": 3451,
+            "range": "± 120",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/overview",
+            "value": 5340,
+            "range": "± 274",
             "unit": "ns/iter"
           }
         ]
